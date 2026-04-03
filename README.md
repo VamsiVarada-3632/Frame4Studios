@@ -43,11 +43,6 @@ npm run dev    # Starts on http://localhost:5173
 | `http://localhost:5173/contact` | Contact form |
 | `http://localhost:5173/admin/login` | Admin panel login |
 
-### Admin Credentials (after seeding)
-```
-Email:    admin@frame4studios.com
-Password: Frame4Studios@2024
-```
 
 ## 📁 Project Structure
 
