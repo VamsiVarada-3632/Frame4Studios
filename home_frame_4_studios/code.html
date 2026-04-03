@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRAME 4 STUDIOS | Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&amp;family=Syne:wght@400;700&amp;family=DM+Sans:wght@300&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-container": "#00716e",
+            "on-primary-container": "#ffdada",
+            "outline-variant": "#5b4040",
+            "secondary-fixed-dim": "#ffb3b4",
+            "tertiary-fixed-dim": "#80d5d1",
+            "on-tertiary": "#003735",
+            "on-error": "#690005",
+            "secondary": "#ffb3b4",
+            "surface-container-highest": "#353534",
+            "on-primary-fixed-variant": "#920023",
+            "inverse-surface": "#e5e2e1",
+            "on-surface": "#e5e2e1",
+            "on-surface-variant": "#e3bebd",
+            "secondary-container": "#ac002d",
+            "on-background": "#e5e2e1",
+            "background": "#131313",
+            "primary-fixed": "#ffdad9",
+            "primary": "#ffb3b4",
+            "on-tertiary-fixed": "#00201f",
+            "primary-fixed-dim": "#ffb3b4",
+            "on-tertiary-container": "#9cf2ed",
+            "surface-tint": "#ffb3b4",
+            "on-secondary-fixed-variant": "#920024",
+            "inverse-primary": "#ba1434",
+            "secondary-fixed": "#ffdada",
+            "error": "#ffb4ab",
+            "surface": "#131313",
+            "surface-container": "#201f1f",
+            "outline": "#aa8989",
+            "inverse-on-surface": "#313030",
+            "surface-variant": "#353534",
+            "surface-container-high": "#2a2a2a",
+            "surface-bright": "#3a3939",
+            "on-primary": "#680016",
+            "surface-container-low": "#1c1b1b",
+            "on-secondary": "#680017",
+            "on-secondary-fixed": "#40000b",
+            "surface-container-lowest": "#0e0e0e",
+            "on-tertiary-fixed-variant": "#00504d",
+            "on-secondary-container": "#ffb7b9",
+            "tertiary-fixed": "#9cf1ed",
+            "primary-container": "#c41e3a",
+            "surface-dim": "#131313",
+            "tertiary": "#80d5d1",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed": "#40000a",
+            "error-container": "#93000a"
+          },
+          fontFamily: {
+            "serif": ["Cormorant Garamond", "serif"],
+            "ui": ["Syne", "sans-serif"],
+            "body": ["DM Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>body {
+    background-color: #0e0e0e;
+    cursor: none
+    }
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAO51Um7BlawIDPIxYhqt0Gfi0OeSuo6ivOa4iu2CwqfLA0KtJ8sqwKDBIPi-4-nZyZkEQLyTHPctV9oq8-4eu42rLD_T6JVmCofAMfYJ8Hb_26IV8bVon3Bs8TbsKvdB_IkgBJTly2JpaTDf9Tm0GL3uju0XPogBC9h4JCPIHTWPKQx5YWvjqSd1gWF3eOegknOzWcJSgJeEYmDEGdSmh533CzFRwbj4S3NwUm2UIqbQXeuWEOBEKzm60-asGhX3EHltUnjSt72zw);
+    opacity: 0.04
+    }
+.custom-cursor {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference
+    }
+.custom-cursor-ring {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #c41e3a;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.15s ease-out
+    }
+.camera-bracket {
+    width: 24px;
+    height: 24px;
+    border-color: rgba(196, 30, 58, 0.4);
+    position: absolute;
+    border-width: 1px
+    }
+.bracket-tl {
+    top: 40px;
+    left: 40px;
+    border-right: 0;
+    border-bottom: 0
+    }
+.bracket-tr {
+    top: 40px;
+    right: 40px;
+    border-left: 0;
+    border-bottom: 0
+    }
+.bracket-bl {
+    bottom: 40px;
+    left: 40px;
+    border-right: 0;
+    border-top: 0
+    }
+.bracket-br {
+    bottom: 40px;
+    right: 40px;
+    border-left: 0;
+    border-top: 0
+    }
+.marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 2rem
+    }
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 2rem
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24
+    }</style>
+</head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-white">
+<!-- Noise & Cursor -->
+<div class="noise-overlay"></div>
+<div class="custom-cursor hidden md:block"></div>
+<div class="custom-cursor-ring hidden md:block"></div>
+<!-- Top Navigation (Shared Component) -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-6 max-w-full bg-[#131313]/90 backdrop-blur-xl z-50">
+<div class="text-2xl font-light tracking-tighter text-[#E5E2E1] font-serif italic">FRAME 4 STUDIOS</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-[#FFB3B4] font-bold border-b-0 font-ui text-xs tracking-[0.15em] transition-colors duration-500" href="#">WORK</a>
+<a class="text-[#E5E2E1] font-medium font-ui text-xs tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500" href="#">STUDIO</a>
+<a class="text-[#E5E2E1] font-medium font-ui text-xs tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500" href="#">FILMS</a>
+<a class="text-[#E5E2E1] font-medium font-ui text-xs tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500" href="#">JOURNAL</a>
+<a class="text-[#E5E2E1] font-medium font-ui text-xs tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500" href="#">CONTACT</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-ui text-xs tracking-[0.15em] hover:bg-primary transition-all active:scale-95 duration-300">
+      BOOK A CALL
+    </button>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center bg-[#080808] overflow-hidden">
+<!-- Grid Overlay -->
+<div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 60px 60px;"></div>
+<!-- Red Glow -->
+<div class="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-primary-container/20 rounded-full blur-[120px] -translate-y-1/2"></div>
+<!-- Camera Brackets -->
+<div class="camera-bracket bracket-tl"></div>
+<div class="camera-bracket bracket-tr"></div>
+<div class="camera-bracket bracket-bl"></div>
+<div class="camera-bracket bracket-br"></div>
+<div class="relative z-10 text-center px-4">
+<h1 class="text-[12vw] md:text-[10vw] leading-[0.85] font-serif font-light tracking-tighter uppercase mb-6">
+<span class="text-primary-container italic">FRAME</span> 4
+      </h1>
+<p class="font-serif text-xl md:text-3xl italic text-on-surface-variant max-w-2xl mx-auto mb-12">
+        We frame stories that brands remember.
+      </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<button class="w-full md:w-auto bg-primary-container text-white px-10 py-4 font-ui text-sm tracking-[0.2em] transition-all hover:bg-primary hover:tracking-[0.3em]">
+          VIEW WORKS
+        </button>
+<button class="w-full md:w-auto border border-outline-variant text-on-surface px-10 py-4 font-ui text-sm tracking-[0.2em] transition-all hover:border-primary">
+          CONTACT US
+        </button>
+</div>
+</div>
+<!-- Rotating Badge -->
+<div class="absolute bottom-12 right-12 hidden lg:block">
+<div class="relative w-32 h-32 flex items-center justify-center animate-[spin_10s_linear_infinite]">
+<svg class="absolute inset-0 w-full h-full" viewbox="0 0 100 100">
+<path d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" id="circlePath"></path>
+<text class="font-ui text-[7px] tracking-[0.4em] fill-on-surface-variant uppercase">
+<textpath xlink:href="#circlePath">CREATIVE MEDIA AGENCY · EST. 2020 ·</textpath>
+</text>
+</svg>
+<span class="material-symbols-outlined text-primary-container text-2xl">lens_blur</span>
+</div>
+</div>
+</section>
+<!-- Featured Reel Section -->
+<section class="flex flex-col md:flex-row min-h-[819px]">
+<div class="md:w-3/5 relative aspect-video md:aspect-auto group cursor-pointer overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Cinematic wide shot of a movie production set with vintage cameras and professional lighting in a moody studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzKcq2Wvcl1WNsDcVbs7uwPCAG_ugT8u7920E0EV85bRw33WC-tSDZn-Zl3UHN4WNNSxTNcFGGJiJr65RgKImK47DgZxAxkZUNIQZYonM6g72pJKxdUhcJgkyxpeeLOTYXzSmkfSojb6sHELwZf2Ryls9GZMUhZMbuyXSojDaE7MrUPtoMfCgZ-4Rn0vu8KX6uw10BdE_D7ZPuVYKDizP-SYcOfEtaTBJuYIBed2hRPOxkvajx7sAZRePcv5Sdc4lJeN-cfdjwkkg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full border border-white flex items-center justify-center bg-black/20 backdrop-blur-sm group-hover:scale-110 transition-transform">
+<div class="ml-1 w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent"></div>
+</div>
+</div>
+</div>
+<div class="md:w-2/5 bg-[#111111] p-12 md:p-24 flex flex-col justify-center border-l border-primary-container/20">
+<span class="font-ui text-xs tracking-[0.4em] text-primary-container mb-8">FEATURED WORK</span>
+<h2 class="font-serif text-5xl italic leading-tight mb-8">The Signature Reel — 2024</h2>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-ui text-[10px] tracking-widest text-on-surface-variant">CLIENT</span>
+<span class="font-body text-sm font-light">Global Visionary Ltd.</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-ui text-[10px] tracking-widest text-on-surface-variant">CATEGORY</span>
+<span class="font-body text-sm font-light">Brand Narrative / Film</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-2">
+<span class="font-ui text-[10px] tracking-widest text-on-surface-variant">YEAR</span>
+<span class="font-body text-sm font-light">2024</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-24 px-8 bg-[#080808]">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-px bg-outline-variant/20">
+<!-- Fashion -->
+<div class="group relative bg-[#080808] p-12 text-center transition-all duration-500 overflow-hidden hover:z-10">
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/5 transition-colors"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-px bg-primary-container group-hover:w-full transition-all duration-700"></div>
+<span class="block font-serif text-6xl opacity-10 mb-4 transition-all group-hover:opacity-100 group-hover:text-primary-container">01</span>
+<div class="flex justify-center mb-6">
+<span class="material-symbols-outlined text-4xl group-hover:scale-125 transition-transform duration-500">apparel</span>
+</div>
+<h3 class="font-ui text-sm tracking-[0.3em] uppercase">Fashion</h3>
+</div>
+<!-- Events -->
+<div class="group relative bg-[#080808] p-12 text-center transition-all duration-500 overflow-hidden hover:z-10">
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/5 transition-colors"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-px bg-primary-container group-hover:w-full transition-all duration-700"></div>
+<span class="block font-serif text-6xl opacity-10 mb-4 transition-all group-hover:opacity-100 group-hover:text-primary-container">02</span>
+<div class="flex justify-center mb-6">
+<span class="material-symbols-outlined text-4xl group-hover:scale-125 transition-transform duration-500">celebration</span>
+</div>
+<h3 class="font-ui text-sm tracking-[0.3em] uppercase">Events</h3>
+</div>
+<!-- Bikes -->
+<div class="group relative bg-[#080808] p-12 text-center transition-all duration-500 overflow-hidden hover:z-10">
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/5 transition-colors"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-px bg-primary-container group-hover:w-full transition-all duration-700"></div>
+<span class="block font-serif text-6xl opacity-10 mb-4 transition-all group-hover:opacity-100 group-hover:text-primary-container">03</span>
+<div class="flex justify-center mb-6">
+<span class="material-symbols-outlined text-4xl group-hover:scale-125 transition-transform duration-500">two_wheeler</span>
+</div>
+<h3 class="font-ui text-sm tracking-[0.3em] uppercase">Bikes</h3>
+</div>
+<!-- Portraits -->
+<div class="group relative bg-[#080808] p-12 text-center transition-all duration-500 overflow-hidden hover:z-10">
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/5 transition-colors"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-px bg-primary-container group-hover:w-full transition-all duration-700"></div>
+<span class="block font-serif text-6xl opacity-10 mb-4 transition-all group-hover:opacity-100 group-hover:text-primary-container">04</span>
+<div class="flex justify-center mb-6">
+<span class="material-symbols-outlined text-4xl group-hover:scale-125 transition-transform duration-500">face_retouching_natural</span>
+</div>
+<h3 class="font-ui text-sm tracking-[0.3em] uppercase">Portraits</h3>
+</div>
+<!-- Videography -->
+<div class="group relative bg-[#080808] p-12 text-center transition-all duration-500 overflow-hidden hover:z-10">
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/5 transition-colors"></div>
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-px bg-primary-container group-hover:w-full transition-all duration-700"></div>
+<span class="block font-serif text-6xl opacity-10 mb-4 transition-all group-hover:opacity-100 group-hover:text-primary-container">05</span>
+<div class="flex justify-center mb-6">
+<span class="material-symbols-outlined text-4xl group-hover:scale-125 transition-transform duration-500">movie</span>
+</div>
+<h3 class="font-ui text-sm tracking-[0.3em] uppercase">Films</h3>
+</div>
+</div>
+</section>
+<!-- Works Preview Grid -->
+<section class="py-24 px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<h2 class="font-serif text-6xl leading-none">Selected Works</h2>
+<div class="flex flex-wrap gap-8 font-ui text-[10px] tracking-[0.3em]">
+<button class="text-primary-container border-b border-primary-container pb-1">ALL</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors pb-1">FASHION</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors pb-1">EVENTS</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors pb-1">COMMERCIAL</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-6">
+<!-- Card 1 -->
+<div class="col-span-12 md:col-span-8 relative group aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" data-alt="Moody dark evening gala event with blurred lights and elegant silhouettes of people in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM9vMAAmZ6ZnZuDXdigqw54V0shjK5_lWxHftz9KEgi34wsk4u2S6RDQzgtVMfYaKnvhJCnVVvPybqeMlARBRvWsE4Hc-Sv6AywKnhcXiEKIZoDj4-PBWiFtIL0SzGMRlmC0Iu8hkyW8yIFuAkDTDEi-gV6MK9nekz4g_D-k0xMmRgz57PEpdIUjlMGtmJ61Jdv6ZvQBK-_zN5l6GDbwvXyG-5th56uAnHhT6x6Y6pMO2XJoy36wLtxxgMAOrrjxuWnrgSOGKHt5U"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
+<span class="font-ui text-[10px] tracking-widest text-primary-container mb-2">EVENT</span>
+<h4 class="font-serif text-3xl italic">Noir Nights 2023</h4>
+<div class="mt-4"><span class="material-symbols-outlined text-3xl">play_circle</span></div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="col-span-12 md:col-span-4 relative group aspect-[9/12] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" data-alt="Dramatic black and white fashion portrait of a model with high contrast shadows and ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxyinWFrFbtqDdIKjR1Sd4BeeDAQe4a0FFyfvOpIOs-iiYKNdePtkN7rPIxBOcg2QoExI-soS3ZS-CjVb4wyidZz0mvxzHfRfv-FY4pR4xxu5WsOwzayPa6jdk720Bm0ev5B6rKMuvfGJjN-A2-8oJ5Z671he80NJBareTahXNVBr-j2LQiYPhKf1gMnfNlmJagxB6-KKBOzfnVZhL8M1qdU7ToXE1RcX0CWOaeIfPLw-gjFB5KC8kWvBboSrr5_RONcjnKjONiKs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
+<span class="font-ui text-[10px] tracking-widest text-primary-container mb-2">FASHION</span>
+<h4 class="font-serif text-3xl italic">Vogue Editorial</h4>
+<div class="mt-4"><span class="material-symbols-outlined text-3xl">visibility</span></div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="col-span-12 md:col-span-4 relative group aspect-[9/12] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" data-alt="Sleek black custom motorcycle parked in a dimly lit garage with subtle red neon highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALYYFcIOWwINZ1exZNu3bsfKDVzqn6vbUJIDqpHEuXNEkM4Kud6A8QdBSvlSmxnyJvbCUdeGYZbBHTOI0JS-cTCUyGW5pbChQn0j1rVlLcfmP-ywcxPjlBnRAcvbhKabfouFnnAc7uAiTgyEy_mkWYzewhr-63WnKU4XUTe4nNONPcnB5AoE8zkEptLcXe0PZUQyTqcbsb3-ZBYO1L2uqTLCNnhDpa1dFzTWtbc2vxxiBT87LdI1YpstMOPnw9ATkCN6UICMzheo4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
+<span class="font-ui text-[10px] tracking-widest text-primary-container mb-2">BIKES</span>
+<h4 class="font-serif text-3xl italic">The Phantom Ride</h4>
+<div class="mt-4"><span class="material-symbols-outlined text-3xl">play_circle</span></div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="col-span-12 md:col-span-8 relative group aspect-[16/9] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" data-alt="Cinematic street scene at night with wet pavement reflecting neon city lights and a mysterious atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU15ufAmukb9ZRkk88MfCNDVJDaj0MfMnaIh7e1sZ_dl-pls0degcHDhE38O-slcpwp4s9Cs-IFtlzJMugZPB2WCZAVjWdEGjOTc_QFVI7wEsUCXlaxWP_VW4BIJ3zvrUBd0H5llbGf5DimzfQ65x96-eAqgQJ5nfdR3tL47dKdrLdk7soFEWHsWn3vua4MbP0U6IVE4qan4prssiMcLkJlTyRWQWXAeQZxn33dAL40oOCGYEkl11nhvWVCy2WGUYYKCA4IUnNXZ8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
+<span class="font-ui text-[10px] tracking-widest text-primary-container mb-2">COMMERCIAL</span>
+<h4 class="font-serif text-3xl italic">Urban Echoes</h4>
+<div class="mt-4"><span class="material-symbols-outlined text-3xl">play_circle</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Strip -->
+<section class="py-32 px-8 bg-surface-container-low border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-20 items-center">
+<div class="md:w-1/2 relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 border border-primary-container/20 -z-10"></div>
+<div class="bg-primary-container text-white p-12 text-center inline-block">
+<span class="font-serif text-7xl leading-none mb-2 block">200+</span>
+<span class="font-ui text-xs tracking-[0.4em] uppercase">Projects Delivered</span>
+</div>
+<p class="font-serif text-3xl italic mt-12 leading-relaxed text-on-surface">
+          "We don't just capture motion; we curate the essence of a brand's pulse."
+        </p>
+</div>
+<div class="md:w-1/2 grid grid-cols-2 gap-12 w-full">
+<div>
+<h5 class="font-ui text-[10px] tracking-[0.5em] text-primary-container mb-4 uppercase">Films Shot</h5>
+<span class="font-serif text-4xl italic">450+</span>
+</div>
+<div>
+<h5 class="font-ui text-[10px] tracking-[0.5em] text-primary-container mb-4 uppercase">Awards Won</h5>
+<span class="font-serif text-4xl italic">12</span>
+</div>
+<div>
+<h5 class="font-ui text-[10px] tracking-[0.5em] text-primary-container mb-4 uppercase">Clients</h5>
+<span class="font-serif text-4xl italic">85</span>
+</div>
+<div>
+<h5 class="font-ui text-[10px] tracking-[0.5em] text-primary-container mb-4 uppercase">Years</h5>
+<span class="font-serif text-4xl italic">04</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Marquee -->
+<div class="bg-primary-container overflow-hidden py-6">
+<div class="marquee font-ui font-bold text-black text-2xl md:text-4xl tracking-tighter uppercase italic">
+<div class="marquee-content">
+<span>Cinematography · Show Reels · Brand Videos · Motion Graphics · Post Production · Color Grading · </span>
+<span>Cinematography · Show Reels · Brand Videos · Motion Graphics · Post Production · Color Grading · </span>
+</div>
+</div>
+</div>
+<!-- Contact Strip -->
+<section class="py-40 px-8 text-center bg-[#080808] relative">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-serif text-[8vw] md:text-7xl italic leading-none mb-12">Have a vision?<br/><span class="text-primary-container">Let's Frame It.</span></h2>
+<a class="inline-block font-ui text-sm tracking-[0.4em] border-b-2 border-primary-container pb-4 transition-all hover:tracking-[0.6em] hover:text-primary" href="mailto:hello@frame4.com">START A PROJECT</a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#0e0e0e] border-t border-[#C41E3A]/40">
+<div class="text-xl font-serif text-[#E5E2E1]">FRAME 4 STUDIOS</div>
+<div class="text-center md:text-left">
+<p class="font-ui text-[10px] tracking-[0.4em] text-on-surface-variant uppercase">© 2024 FRAME 4 STUDIOS. CRAFTED WITH INTENTION.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-ui text-[10px] tracking-[0.4em] text-[#E3BEBD] hover:text-[#FFB3B4] transition-opacity duration-300" href="#">INSTAGRAM</a>
+<a class="font-ui text-[10px] tracking-[0.4em] text-[#E3BEBD] hover:text-[#FFB3B4] transition-opacity duration-300" href="#">YOUTUBE</a>
+<a class="font-ui text-[10px] tracking-[0.4em] text-[#E3BEBD] hover:text-[#FFB3B4] transition-opacity duration-300" href="#">WHATSAPP</a>
+</div>
+</footer>
+<script>
+    const cursor = document.querySelector('.custom-cursor');
+    const ring = document.querySelector('.custom-cursor-ring');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      
+      ring.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+    });
+
+    document.querySelectorAll('a, button, .group').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        ring.style.width = '60px';
+        ring.style.height = '60px';
+        ring.style.transform = `translate(${cursor.offsetLeft - 30}px, ${cursor.offsetTop - 30}px)`;
+        ring.style.backgroundColor = 'rgba(196, 30, 58, 0.1)';
+      });
+      el.addEventListener('mouseleave', () => {
+        ring.style.width = '40px';
+        ring.style.height = '40px';
+        ring.style.backgroundColor = 'transparent';
+      });
+    });
+  </script>
+</body></html>

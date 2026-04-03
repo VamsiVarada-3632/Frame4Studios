@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FASHION — FRAME 4 STUDIOS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&amp;family=Syne:wght@400;700&amp;family=DM+Sans:wght@300;400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#00716e",
+              "on-primary-container": "#ffdada",
+              "outline-variant": "#5b4040",
+              "secondary-fixed-dim": "#ffb3b4",
+              "tertiary-fixed-dim": "#80d5d1",
+              "on-tertiary": "#003735",
+              "on-error": "#690005",
+              "secondary": "#ffb3b4",
+              "surface-container-highest": "#353534",
+              "on-primary-fixed-variant": "#920023",
+              "inverse-surface": "#e5e2e1",
+              "on-surface": "#e5e2e1",
+              "on-surface-variant": "#e3bebd",
+              "secondary-container": "#ac002d",
+              "on-background": "#e5e2e1",
+              "background": "#131313",
+              "primary-fixed": "#ffdad9",
+              "primary": "#ffb3b4",
+              "on-tertiary-fixed": "#00201f",
+              "primary-fixed-dim": "#ffb3b4",
+              "on-tertiary-container": "#9cf2ed",
+              "surface-tint": "#ffb3b4",
+              "on-secondary-fixed-variant": "#920024",
+              "inverse-primary": "#ba1434",
+              "secondary-fixed": "#ffdada",
+              "error": "#ffb4ab",
+              "surface": "#131313",
+              "surface-container": "#201f1f",
+              "outline": "#aa8989",
+              "inverse-on-surface": "#313030",
+              "surface-variant": "#353534",
+              "surface-container-high": "#2a2a2a",
+              "surface-bright": "#3a3939",
+              "on-primary": "#680016",
+              "surface-container-low": "#1c1b1b",
+              "on-secondary": "#680017",
+              "on-secondary-fixed": "#40000b",
+              "surface-container-lowest": "#0e0e0e",
+              "on-tertiary-fixed-variant": "#00504d",
+              "on-secondary-container": "#ffb7b9",
+              "tertiary-fixed": "#9cf1ed",
+              "primary-container": "#c41e3a",
+              "surface-dim": "#131313",
+              "tertiary": "#80d5d1",
+              "on-error-container": "#ffdad6",
+              "on-primary-fixed": "#40000a",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Cormorant Garamond"],
+              "body": ["DM Sans"],
+              "label": ["Syne"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 1.4rem;
+        }
+        .span-v { grid-row: span 3; }
+        .span-h { grid-column: span 2; grid-row: span 2; }
+        @media (max-width: 768px) {
+            .span-h { grid-column: span 1; }
+        }
+        .camera-bracket-tl { position: absolute; top: 12px; left: 12px; width: 8px; height: 8px; border-top: 1px solid rgba(196, 30, 58, 0.4); border-left: 1px solid rgba(196, 30, 58, 0.4); }
+        .camera-bracket-br { position: absolute; bottom: 12px; right: 12px; width: 8px; height: 8px; border-bottom: 1px solid rgba(196, 30, 58, 0.4); border-right: 1px solid rgba(196, 30, 58, 0.4); }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="noise-overlay"></div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-6 max-w-full bg-[#131313]/90 backdrop-blur-xl z-50">
+<div class="text-2xl font-light tracking-tighter text-[#E5E2E1] font-headline italic">FRAME 4 STUDIOS</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="text-[#FFB3B4] font-bold border-b-0 font-label text-sm tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500" href="#">WORK</a>
+<a class="text-[#E5E2E1] font-medium font-label text-sm tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500 uppercase" href="#">STUDIO</a>
+<a class="text-[#E5E2E1] font-medium font-label text-sm tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500 uppercase" href="#">FILMS</a>
+<a class="text-[#E5E2E1] font-medium font-label text-sm tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500 uppercase" href="#">JOURNAL</a>
+<a class="text-[#E5E2E1] font-medium font-label text-sm tracking-[0.15em] hover:text-[#C41E3A] transition-colors duration-500 uppercase" href="#">CONTACT</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label text-xs tracking-widest active:scale-95 duration-300">BOOK A CALL</button>
+</nav>
+<main class="pt-24">
+<!-- Breadcrumb -->
+<div class="px-8 mb-8 flex items-center gap-2 font-label text-[10px] tracking-[0.3em] text-on-surface-variant uppercase">
+<a class="hover:text-primary transition-colors" href="index.html">HOME</a>
+<span class="text-primary-container">/</span>
+<span class="text-on-surface">FASHION</span>
+</div>
+<!-- Hero Section -->
+<section class="relative h-[665px] w-full overflow-hidden flex flex-col justify-end px-8 pb-16 border-b-[3px] border-primary-container bg-surface-dim">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 grayscale" data-alt="high fashion editorial model in dramatic black couture gown posing against a stark dark architectural background with sharp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVvfaZ2tGyEtlF6oLVdnyfdhvr6b_wLwDUyz5xha0iY8gKiMUwFcD02Kji4XPR9vJLJy8yBSDJmcdcD-2lCJP_DG8EF4H_hT4q_X3XxQNcWWrp7CHTHMjiKL14UTtUGr6af1FOpy9eB8kghdnmzy5BpP_XiIjNUI54z6cwAglmZrhHdQ-3ODD6IWHA_GWl_Cfpv6uPRE8silzdTbT8BxwmYvfwD8Q4y39aZr-ZQBZofEYsjQMNl1_LumDPCjISd4kcUJI6H5tKqmQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+<div class="relative z-10 text-right">
+<h1 class="text-8xl md:text-[12rem] font-headline italic font-light leading-none mb-4">Fashion</h1>
+<p class="font-label tracking-[0.2em] text-on-surface-variant uppercase max-w-md ml-auto">Couture, editorial, and style in motion.</p>
+</div>
+<!-- Red Lens Flare Glow -->
+<div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary-container/10 blur-[120px] rounded-full pointer-events-none -translate-x-1/2 translate-y-1/2"></div>
+</section>
+<!-- Content Grid -->
+<section class="px-8 py-20">
+<div class="masonry-grid">
+<!-- Portrait Editorial -->
+<div class="group relative overflow-hidden bg-surface-container span-v cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0" data-alt="vertical fashion portrait of a model in avant-garde white dress with dramatic shadow play on a concrete wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzk83dSShZYA7ukeBdBRMSAl5qs8aFNeQH6kTH7ynPa9fvRDAXb1mY0xVaFYoY40YJJFEu2mMiOIB61SoBa1MCvpVvl7dBIsQnGiWpOLEBw8leU2r2FDC7zYDomahgcAYW633pbxt9euHDHH_Jj2NZ-z6n1oFXV1SZJgYTfcX8emQgdvZc1nxNjjvqmNAkEPIGxtNM0kmUxJc8ked10w3oeEIPYCMJRiaKt7uU7QxZ6kvj3Y4Ub5M16TQtS8y2uOPcobbcMe8t1zE"/>
+<div class="camera-bracket-tl"></div>
+<div class="camera-bracket-br"></div>
+<div class="absolute inset-0 border-[0px] group-hover:border-[1px] border-primary-container transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+<span class="font-label text-[10px] tracking-[0.3em] text-primary">EDITORIAL</span>
+<h3 class="font-headline italic text-2xl mt-1">Noir Elegance</h3>
+</div>
+</div>
+<!-- Landscape Video Content -->
+<div class="group relative overflow-hidden bg-surface-container span-h cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0" data-alt="cinematic wide shot of fashion show runway with intense red spotlights and models in silhouette motion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNeEKBpIciOOleMp37l9VVNdGA7nOPHbrQSZBTgfbxqNu0K-Jqbm7a2NDUx5u2KUN20SzD6TUY8k-6Bzm9Ok0LDYPzf0iriNHT89Y01EQv5EJMQSLH5Jdx3rVOkLZXgfQ-wJEuA7POzAFLOK2QXyoE5sWm9KyFmWkGKhB5UDyw1GAMq-zezZN6qAdFsTXxlRzviZnFOr9G1rHo-cLXgcjJUuJw5XWvpCvw_PjSjSbGyQv8ZVnJqZuaGd-bmNywC8rbiVNhCUBZHW8"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full border border-on-surface/20 flex items-center justify-center backdrop-blur-sm group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-3xl">play_arrow</span>
+</div>
+</div>
+<div class="camera-bracket-tl"></div>
+<div class="camera-bracket-br"></div>
+<div class="absolute inset-0 border-[0px] group-hover:border-[1px] border-primary-container transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+<span class="font-label text-[10px] tracking-[0.3em] text-primary">FILM</span>
+<h3 class="font-headline italic text-2xl mt-1">Velvet Motion</h3>
+</div>
+</div>
+<!-- Portrait 2 -->
+<div class="group relative overflow-hidden bg-surface-container span-v cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0" data-alt="fashion photography of luxury accessories draped on a velvet surface with high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUhsobWdZA9Uj3iaVdkudFwqGjPNTNsVfONkfGGojd7LUl3L2LsCM2iT4xQdBchr2yM7L2CdfZC87VVsyOfRVL9zvkUXtFyaTiupr3IsC3eFKQzORLeywZxUaZsC9g8bUHvH-O04VTO4bw-mKhYvJ593U1djn8w86paAhZGk_fAqeG29CPh6VAPMXtCn7ADEf7dfaOdD5pHpqnFqPAPBikcBmRgasvLxzQOETJCLqWiqW0W_V2nXF6XLQVMk5CWyb9PAw22Zlz3ps"/>
+<div class="camera-bracket-tl"></div>
+<div class="camera-bracket-br"></div>
+<div class="absolute inset-0 border-[0px] group-hover:border-[1px] border-primary-container transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+<span class="font-label text-[10px] tracking-[0.3em] text-primary">STILL</span>
+<h3 class="font-headline italic text-2xl mt-1">The Artifact</h3>
+</div>
+</div>
+<!-- Portrait 3 -->
+<div class="group relative overflow-hidden bg-surface-container span-v cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0" data-alt="portrait of a fashion model with heavy dramatic makeup wearing lace textures in low light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7fn5RCuY-t9zB1oucHc30aIk3xBK7YAICb10FOjIPeZzHHhye8Odt5YCSrEzoQ-UdA0iir-YmSA95hGHiOoiUseAY0rZgHeDgYIckp1Fip25Zd7fDCLO_ykEtk7WVdVxEMkX_mrJqPF-7LPXguWzXk6QokcTMfQ-y6znrror0TfQXELGW9WQLoXevu4fCS3JYz1Xh7OOaWksJqtBE8QYJyrVRx0de8Vm-iqgVKCl0q1NahnipedZm24Lu2dTXO97lO8VUk2xv4bE"/>
+<div class="camera-bracket-tl"></div>
+<div class="camera-bracket-br"></div>
+<div class="absolute inset-0 border-[0px] group-hover:border-[1px] border-primary-container transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+<span class="font-label text-[10px] tracking-[0.3em] text-primary">EDITORIAL</span>
+<h3 class="font-headline italic text-2xl mt-1">Lace &amp; Shadow</h3>
+</div>
+</div>
+<!-- Landscape 2 -->
+<div class="group relative overflow-hidden bg-surface-container span-h cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0" data-alt="wide shot of high fashion editorial models in futuristic silver outfits standing in a dark desert landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZdzE3FtGV8ItLKPaH_K97V8yCa_u6akQlWLF7ohJL8nlVhrHilSqA-LiuOKEYdBWmqyiCLLxZ72Np1F86Q_uAldcCvgNO5ewnXXmCx8GJPsdbLgz2mAzFmkIuQnweHk-2SFMYI9mvUr2V5a6NggFhK1KBfwmMJUcR_14sFmwIL1PIG2tEcXmfAddD2E9x42JBT30jU9hhb40uK7SqZDqU55sT5qLv7GT62aar1bWeYaRkKlQbIaI35dupHcKhUznsRSZxUQZkVAI"/>
+<div class="camera-bracket-tl"></div>
+<div class="camera-bracket-br"></div>
+<div class="absolute inset-0 border-[0px] group-hover:border-[1px] border-primary-container transition-all duration-300"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+<span class="font-label text-[10px] tracking-[0.3em] text-primary">PRODUCTION</span>
+<h3 class="font-headline italic text-2xl mt-1">Desert Chrome</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Explorer -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="px-8 mb-12">
+<h2 class="font-headline italic text-5xl">Explore Other Categories</h2>
+<div class="w-24 h-px bg-primary-container mt-4"></div>
+</div>
+<div class="flex overflow-x-auto gap-8 px-8 no-scrollbar pb-8">
+<!-- Category Card: Events -->
+<a class="flex-none w-80 group" href="#">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden relative border border-outline-variant/20 transition-all duration-500 group-hover:border-primary-container">
+<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="abstract moody photo of a gala event with crystal glassware and soft candlelight in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVRIrtab9V3GeH8CzvDnEb7iFolorb8uAM_MW0vasJwwMM1LXhbQ8302WflxgggEmJpr-D57W8zNGASKNI59_pQ-qXCRoRMXVW0yHfMIi5RRu8-KtJNBzESLp9D2TaarfseblncdkWiKgGOiEdSUpbmnZDSX5_eriAk4AsnOLdg47IA4d_be9n7XbQ6kDBkwvmb4CK-Rqe8xq5eCyeTK9fbPTjSGpBhow_mHo-sF_18a6OtpOhR4sC8_XvXjU2jJ-YRA9hyYpUgSk"/>
+<div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-surface-container-lowest to-transparent">
+<span class="font-label text-[10px] tracking-[0.4em] text-on-surface-variant group-hover:text-primary transition-colors">01</span>
+<h4 class="font-headline italic text-3xl">Events</h4>
+</div>
+</div>
+</a>
+<!-- Category Card: Bikes -->
+<a class="flex-none w-80 group" href="#">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden relative border border-outline-variant/20 transition-all duration-500 group-hover:border-primary-container">
+<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="close-up of a high-end custom motorcycle engine with polished chrome and dark matte details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8jWiDF05HRk4AkL-4fTCOxe0mc5WrKucKG8LQWxxuEBUl8hb_aTJrWjJtW3FuVtDV0Ge-eWJ6TH-g6foGnuZfuG-KFawS4HwFsju4HDcADTnsjt7SAUGGXzlsUlqnzL1thWRK5a3ajIC6QDavdPev4Z2f3fFGpKWQ1n6Sj1ApRSPw1S2plQ5PU9HCT-fDiAOOPOYeSbMWphwHkcyCFKi1D0z3OdScJ_jwcvm4w-PqcFIgvooSB2voR41BSsjci8bpxdzqHKnheNc"/>
+<div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-surface-container-lowest to-transparent">
+<span class="font-label text-[10px] tracking-[0.4em] text-on-surface-variant group-hover:text-primary transition-colors">02</span>
+<h4 class="font-headline italic text-3xl">Bikes</h4>
+</div>
+</div>
+</a>
+<!-- Category Card: Portrait -->
+<a class="flex-none w-80 group" href="#">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden relative border border-outline-variant/20 transition-all duration-500 group-hover:border-primary-container">
+<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="dramatic black and white male portrait with strong lighting and textured skin details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW70toPfDZdbnrkmzq7AluKcdbAheNNNnYk49_Mhw4kUElg1tNasz8dDIDNv8_UMvx_4qMosKtBxM0fFFarcXTyqxOSB4FHzy6qfyWrX7rfT_z5WC4C0V2C4_6fgM6IffAvfKxvHCL-2RXL4wwIq41pX-dVW_cdBDGRUngI1dlQ4CBEQWdrjuTQEq4HrhPnIoNvzgYy-P_4Z1K3_nF0qgWBa5AsKoy-3gRFtalJAPZdjZoZxa1cAye3utd2x3pRuNxemKTJ8fkYVY"/>
+<div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-surface-container-lowest to-transparent">
+<span class="font-label text-[10px] tracking-[0.4em] text-on-surface-variant group-hover:text-primary transition-colors">03</span>
+<h4 class="font-headline italic text-3xl">Portrait</h4>
+</div>
+</div>
+</a>
+<!-- Category Card: Videography -->
+<a class="flex-none w-80 group" href="#">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden relative border border-outline-variant/20 transition-all duration-500 group-hover:border-primary-container">
+<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="vintage cinema camera lens on a dark movie set with anamorphic lens flare" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgLJ9Wz3lVPOM9rl13ZlNq5GujCYO9_J3n9mDUcm_mpguoGLCy7J8Rs3Po_eKy5hj-5EmSur6RODmsGaeuxe8ES0nxeQowWPCRFRI827TQUjja-xjKdQ0aVRTVtH2HdohFVuIDzXige1Jj6xrlJ6Simnz4dj8Z3UGzu5BYFh9n7dxl1rgv2DCMcZOnpjvM5oLZm4JQYfz51kfV99tmyh3tEr59F2oN3SufuZN9SZ2yTSFgfk07py-9I_VrLEVy8QVmxgQms0JsCM4"/>
+<div class="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-surface-container-lowest to-transparent">
+<span class="font-label text-[10px] tracking-[0.4em] text-on-surface-variant group-hover:text-primary transition-colors">04</span>
+<h4 class="font-headline italic text-3xl">Videography</h4>
+</div>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-8 bg-[#0e0e0e] border-t border-[#C41E3A]/40">
+<div class="text-xl font-headline text-[#E5E2E1] italic">FRAME 4 STUDIOS</div>
+<div class="font-label text-[10px] tracking-[0.4em] text-[#E3BEBD] uppercase">
+            © 2024 FRAME 4 STUDIOS. CRAFTED WITH INTENTION.
+        </div>
+<div class="flex gap-8">
+<a class="font-label text-[10px] tracking-[0.4em] text-[#E3BEBD] hover:text-[#FFB3B4] transition-all" href="#">INSTAGRAM</a>
+<a class="font-label text-[10px] tracking-[0.4em] text-[#E3BEBD] hover:text-[#FFB3B4] transition-all" href="#">YOUTUBE</a>
+<a class="font-label text-[10px] tracking-[0.4em] text-[#E3BEBD] hover:text-[#FFB3B4] transition-all" href="#">WHATSAPP</a>
+</div>
+</footer>
+<!-- Side Menu Overlay (Suppressed initially, for reference) -->
+<div class="fixed inset-0 z-[60] flex flex-col justify-center items-center bg-[#0e0e0e] hidden" id="sideNav">
+<div class="text-4xl text-[#E5E2E1] font-headline italic mb-12">FRAME 4</div>
+<div class="flex flex-col items-center gap-6">
+<a class="text-6xl font-headline italic text-[#C41E3A] hover:tracking-widest transition-all duration-700" href="#">WORK</a>
+<a class="text-6xl font-headline italic text-[#E5E2E1] hover:tracking-widest transition-all duration-700" href="#">STUDIO</a>
+<a class="text-6xl font-headline italic text-[#E5E2E1] hover:tracking-widest transition-all duration-700" href="#">FILMS</a>
+<a class="text-6xl font-headline italic text-[#E5E2E1] hover:tracking-widest transition-all duration-700" href="#">JOURNAL</a>
+<a class="text-6xl font-headline italic text-[#E5E2E1] hover:tracking-widest transition-all duration-700" href="#">CONTACT</a>
+</div>
+<button class="mt-20 border border-primary-container px-12 py-4 font-label tracking-widest text-primary-container hover:bg-primary-container hover:text-on-primary-container transition-all">START PROJECT</button>
+</div>
+</body></html>

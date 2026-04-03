@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Syne:wght@400;700&family=DM+Sans:wght@300;400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-noir: #080808;
+  --color-noir-mid: #0e0e0e;
+  --color-surface: #131313;
+  --color-surface-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-high: #2a2a2a;
+  --color-surface-highest: #353534;
+  --color-crimson: #c41e3a;
+  --color-crimson-dim: #ac002d;
+  --color-petal: #ffb3b4;
+  --color-petal-dim: #ffdada;
+  --color-text: #e5e2e1;
+  --color-text-muted: #e3bebd;
+  --color-outline: #5b4040;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-ui: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Border Radius — all sharp */
+  --radius: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 9999px;
+}
+
+/* ==================
+   BASE STYLES
+=================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-noir-mid);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  cursor: none;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Restore native cursor for interactive/text elements */
+input, textarea, select,
+input[type="text"], input[type="email"], input[type="number"],
+input[type="password"], input[type="search"], input[type="url"],
+[contenteditable] {
+  cursor: text !important;
+}
+input[type="checkbox"], input[type="radio"], input[type="file"],
+a, button, label[for], label.cursor-pointer, [role="button"] {
+  cursor: pointer !important;
+}
+
+::selection {
+  background-color: var(--color-crimson);
+  color: white;
+}
+
+/* ==================
+   NOISE OVERLAY
+=================== */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ==================
+   CUSTOM CURSOR
+=================== */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
+.cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-crimson);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, transform 0.08s linear;
+}
+
+.cursor-ring.hovered {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(196, 30, 58, 0.1);
+}
+
+/* ==================
+   CAMERA BRACKETS
+=================== */
+.camera-bracket-tl {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid rgba(196, 30, 58, 0.45);
+  border-left: 1px solid rgba(196, 30, 58, 0.45);
+}
+
+.camera-bracket-br {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid rgba(196, 30, 58, 0.45);
+  border-right: 1px solid rgba(196, 30, 58, 0.45);
+}
+
+.camera-bracket-tr {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid rgba(196, 30, 58, 0.45);
+  border-right: 1px solid rgba(196, 30, 58, 0.45);
+}
+
+.camera-bracket-bl {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid rgba(196, 30, 58, 0.45);
+  border-left: 1px solid rgba(196, 30, 58, 0.45);
+}
+
+/* ==================
+   SERVICES MARQUEE
+=================== */
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem;
+  width: 100%;
+}
+
+.marquee-track {
+  flex-shrink: 0;
+  display: flex;
+  min-width: 100%;
+  gap: 2rem;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* ==================
+   GRID HERO OVERLAY
+=================== */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ==================
+   FONT UTILITIES
+=================== */
+.font-serif { font-family: var(--font-serif); }
+.font-ui    { font-family: var(--font-ui); }
+.font-body  { font-family: var(--font-body); }
+
+/* ==================
+   SCROLLBAR
+=================== */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-noir-mid); }
+::-webkit-scrollbar-thumb { background: var(--color-crimson); }
+
+/* ==================
+   PAGE TRANSITIONS
+=================== */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* ==================
+   ADMIN MODE — Restore native OS cursor for the entire admin panel.
+   Works in conjunction with the useEffect in AdminLayout / AdminLogin
+   that sets document.body.style.cursor = 'auto' at runtime.
+=================== */
+body.admin-mode,
+body.admin-mode * {
+  cursor: auto;
+}
+body.admin-mode input,
+body.admin-mode textarea,
+body.admin-mode select {
+  cursor: text;
+}
+body.admin-mode a,
+body.admin-mode button,
+body.admin-mode label,
+body.admin-mode [role="button"] {
+  cursor: pointer;
+}
+
+/* ==================
+   ADMIN INPUT STYLES
+=================== */
+.admin-input {
+  width: 100%;
+  background: var(--color-surface-container);
+  border: none;
+  border-bottom: 1px solid var(--color-outline);
+  color: var(--color-text);
+  padding: 0.75rem 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.3s;
+  cursor: text;
+}
+
+.admin-input:focus {
+  border-bottom-color: var(--color-crimson);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.1);
+}
+
+.admin-input::placeholder { color: var(--color-text-muted); opacity: 0.5; }
+
+/* ==================
+   MASONRY GRID
+=================== */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 1.25rem;
+}
+
+.masonry-span-v { grid-row: span 3; }
+.masonry-span-h { grid-column: span 2; grid-row: span 2; }
+
+@media (max-width: 768px) {
+  .masonry-span-h { grid-column: span 1; }
+}
+
+/* ==================
+   TRUE MASONRY (PHOTO CATALOG)
+=================== */
+.photo-columns {
+  column-count: 3;
+  column-gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .photo-columns {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-columns {
+    column-count: 1;
+  }
+}
+
+.photo-columns-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* ==================
+   MODAL
+=================== */
+.video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* No-scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
