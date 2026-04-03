@@ -26,6 +26,8 @@ const allowedOrigins = [
   'http://localhost:5174',
   'http://localhost:5175',
   'http://localhost:3000',
+  'https://frame4-studios.vercel.app',
+  'https://frame4studios.onrender.com',
   process.env.ALLOWED_ORIGIN,
 ].filter(Boolean);
 
