@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.post('/', protect, upload.single('thumbnail'), async (req, res) => {
   try {
     const data = { ...req.body };
-    if (req.file) data.thumbnail = req.file.filename;
+    if (req.file) data.thumbnail = req.file.path;
     const category = new Category(data);
     await category.save();
     res.status(201).json(category);
@@ -32,7 +32,7 @@ router.post('/', protect, upload.single('thumbnail'), async (req, res) => {
 router.put('/:id', protect, upload.single('thumbnail'), async (req, res) => {
   try {
     const data = { ...req.body };
-    if (req.file) data.thumbnail = req.file.filename;
+    if (req.file) data.thumbnail = req.file.path;
     const category = await Category.findByIdAndUpdate(req.params.id, data, { new: true });
     if (!category) return res.status(404).json({ error: 'Category not found' });
     res.json(category);

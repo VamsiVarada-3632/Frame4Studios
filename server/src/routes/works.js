@@ -68,8 +68,8 @@ const cpUpload = upload.fields([
 router.post('/', protect, cpUpload, async (req, res) => {
   try {
     const data = { ...req.body };
-    if (req.files && req.files['thumbnail']) data.thumbnail = req.files['thumbnail'][0].filename;
-    if (req.files && req.files['photos']) data.photos = req.files['photos'].map(f => f.filename);
+    if (req.files && req.files['thumbnail']) data.thumbnail = req.files['thumbnail'][0].path;
+    if (req.files && req.files['photos']) data.photos = req.files['photos'].map(f => f.path);
 
     // Parse multi-category array sent as JSON string from FormData
     if (data.categories && typeof data.categories === 'string') {
@@ -96,11 +96,11 @@ router.post('/', protect, cpUpload, async (req, res) => {
 router.put('/:id', protect, cpUpload, async (req, res) => {
   try {
     const data = { ...req.body };
-    if (req.files && req.files['thumbnail']) data.thumbnail = req.files['thumbnail'][0].filename;
+    if (req.files && req.files['thumbnail']) data.thumbnail = req.files['thumbnail'][0].path;
     
     // Only update photos if new files were actually uploaded
     if (req.files && req.files['photos']) {
-      data.photos = req.files['photos'].map(f => f.filename);
+      data.photos = req.files['photos'].map(f => f.path);
     }
 
     // Parse multi-category array

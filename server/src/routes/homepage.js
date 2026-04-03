@@ -29,7 +29,7 @@ router.put('/', protect, upload.single('thumbnail'), async (req, res) => {
     if (body['featuredReel.category']) data.featuredReel.category = body['featuredReel.category'];
     if (body['featuredReel.year']) data.featuredReel.year = body['featuredReel.year'];
     if (body['featuredReel.videoUrl']) data.featuredReel.videoUrl = body['featuredReel.videoUrl'];
-    if (req.file) data.featuredReel.thumbnail = req.file.filename;
+    if (req.file) data.featuredReel.thumbnail = req.file.path;
 
     if (body['stats.projectsDelivered']) data.stats.projectsDelivered = body['stats.projectsDelivered'];
     if (body['stats.filmsShot']) data.stats.filmsShot = body['stats.filmsShot'];
